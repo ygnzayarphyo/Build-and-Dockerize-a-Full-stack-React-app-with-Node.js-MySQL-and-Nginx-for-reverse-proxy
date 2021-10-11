@@ -16,3 +16,12 @@ To start interacting with the application, open `http://localhost:3050/` on a br
 Check out the step by step explained guide [here](https://www.section.io/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/)
 
 https://www.section.io/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/
+
+if `docker-compose up` times out with UnixHTTPConnectionPool error occured, solved this steps.
+1. Restarting docker service:
+   - sudo systemctl restart docker
+and 
+2. setting DOCKER_CLIENT_TIMEOUT and COMPOSE_HTTP_TIMEOUT environment variables:
+
+   - export DOCKER_CLIENT_TIMEOUT=120
+   - export COMPOSE_HTTP_TIMEOUT=120
